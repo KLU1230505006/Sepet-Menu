@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Düzenle</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/product-edit.css"> 
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>39 Cafe</h2>
+        </div>
+        <ul class="menu">
+            <li><a href="../pages/PanelHomepage.html">Anasayfa</a></li>
+            <li><a href="../pages/CategoryAdd.html">Kategori Ekle</a></li>
+            <li><a href="../pages/ProductAdd.html">Ürün Ekle</a></li>
+            <li><a href="../pages/ProductEdit.html" class="active">Ürün Düzenle</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Ürün Düzenle</h1>
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+        </div>
+
+        <div class="content">
+            <div class="form-container">
+                
+                <div id="search-row" class="search-row">
+                    <select id="kategori" name="kategori" required>
+                        <option value="" disabled selected>Kategori Seçin</option>
+                        <option value="kategori1">Kategori 1</option>
+                        <option value="kategori2">Kategori 2</option>
+                    </select>
+                    <select id="urun" name="urun" required>
+                        <option value="" disabled selected>Ürün Seçin</option>
+                        <option value="urun1">Ürün 1</option>
+                        <option value="urun2">Ürün 2</option>
+                    </select>
+                    <button id="ara-btn" class="search-btn">Ara</button>
+                </div>
+
+                
+                <div id="product-name-row" class="product-name-row">
+                    <input type="text" id="product-name-tr" placeholder="Ürün Adı" required>
+                </div>
+
+                
+                <div id="price-row" class="price-row">
+                    <input type="number" id="product-price" placeholder="Fiyat" required>
+                </div>
+
+                
+                <div id="product-description-row" class="product-description-row">
+                    <textarea id="product-description" placeholder="Ürün Açıklaması" required></textarea>
+                </div>
+
+                <div id="product-allergy-row" class="product-description-row">
+                    <textarea id="product-allergy" placeholder="Alerji Bilgileri" required></textarea>
+                </div>
+
+                <div id="product-calorie-row" class="product-description-row">
+                    <textarea id="product-calorie" placeholder="Kalori Bilgileri"></textarea>
+                </div>
+
+                
+                <button type="submit" id="save-btn" class="save-btn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = '../giriş.html'; 
+        }
+    </script>
+</body>
+</html>

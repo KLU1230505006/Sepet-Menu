@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="sepet.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="ana.html">
+                <img src="logo.jpg" alt="39CAFE Logo" class="navbar-brand" style="height: 120px;width: 120px;border-radius: 50%; margin-right: 10px;">
+            </a>
+            <a href="ana.html">
+                <h1 style="display: inline-block; vertical-align: middle;color: black;margin-right:25px;">39CAFE</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="hakkımızda.html"><strong>HAKKIMIZDA</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="#footer"><strong>İLETİŞİM</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sepet Bölümü -->
+    <div class="container my-5" id="cart-container">
+        <h2>Sepetiniz</h2>
+        <div id="cart-items"></div>
+        
+        <!-- Form, Sepet Boşken Gizlenecek -->
+        <div id="order-form" style="display: none;">
+            <form>
+                <label for="ad">İsminiz:</label>
+                <input type="text" id="ad">
+                <label for="masa">Masa Numaranız:</label>
+                <input type="number" id="masa">
+            </form>
+            <button class="btn btn-primary" type="button" style="width: 100%;text-align: center;font-weight: bold;margin-top: 20px;" onclick="siparisVer()">Sipariş Ver</button>
+        </div>
+    </div>
+    
+   
+    <script>
+        function siparisVer() {
+    var isim = document.getElementById("ad").value.trim();
+    var masaNumarasi = document.getElementById("masa").value.trim();
+    
+    if (isim === "" || masaNumarasi === "") {
+        alert("Lütfen isminizi ve masa numaranızı giriniz.");
+        return;
+    }
+
+    var sepet = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Sipariş bilgilerini localStorage'a kaydediyoruz
+    var siparis = {
+        isim: isim,
+        masaNumarasi: masaNumarasi,
+        urunler: sepet
+    };
+
+    // Masa numarasına göre siparişleri kaydediyoruz
+    var siparisler = JSON.parse(localStorage.getItem('siparisler')) || [];
+    siparisler.push(siparis);
+    localStorage.setItem('siparisler', JSON.stringify(siparisler));
+
+    alert("Siparişiniz alınmıştır. Teşekkürler!");
+    clearCart();  // Sepeti temizleme
+}
+
+function clearCart() {
+    localStorage.removeItem('cart'); // Sepet verisini localStorage'dan sil
+    displayCart();  // Sepeti güncelle, yani görünümdeki ürünleri temizle
+}
+
+function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const orderForm = document.getElementById('order-form');
+    cartItemsContainer.innerHTML = ''; // Her yeni yüklemede eski içerikleri temizle
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Sepetinizde ürün yok.</p>';
+        orderForm.style.display = 'none';  // Sepet boşsa formu gizle
+        return;
+    }
+
+    orderForm.style.display = 'block';  // Sepet doluysa formu göster
+
+    cart.forEach(product => {
+        const productCard = `
+            <div class="row border p-3 align-items-center product-card" data-name="${product.name}">
+                <div class="col-md-2">
+                    <img src="${product.image}" alt="Ürün Resmi" class="img-fluid">
+                </div>
+                <div class="col-md-7">
+                    <h5>${product.name}</h5>
+                    <p class="text-muted">Tahmini Kargoya Teslim: 2 gün içinde</p>
+                </div>
+                <div class="col-md-2 text-end">
+                    <div class="product-quantity">
+                        <button class="btn btn-outline-secondary" onclick="decreaseQuantity('${product.name}')">-</button>
+                        <input type="text" class="form-control mx-2 quantity" value="${product.quantity}" readonly>
+                        <button class="btn btn-outline-secondary" onclick="increaseQuantity('${product.name}')">+</button>
+                        <span class="price" data-price="${product.price}">${(parseFloat(product.price) * product.quantity).toFixed(2)} TL</span>
+                    </div>
+                </div>
+                <div class="col-md-1 text-end">
+                    <button class="btn delete-button" onclick="removeFromCart('${product.name}')">
+                        <i class="bi bi-trash"></i> Sil
+                    </button>
+                </div>
+            </div>
+        `;
+        cartItemsContainer.innerHTML += productCard;
+    });
+}
+
+// Sepetten ürün silme fonksiyonu
+function removeFromCart(productName) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(product => product.name !== productName);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    displayCart();
+}
+
+// Miktar azaltma fonksiyonu
+function decreaseQuantity(productName) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const product = cart.find(p => p.name === productName);
+    const priceElement = document.querySelector(`.price[data-price="${product.price}"]`);
+
+    if (product && product.quantity > 1) {
+        product.quantity -= 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        priceElement.textContent = `${(parseFloat(product.price) * product.quantity).toFixed(2)} TL`;
+        displayCart();
+    }
+}
+
+// Miktar artırma fonksiyonu
+function increaseQuantity(productName) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const product = cart.find(p => p.name === productName);
+    const priceElement = document.querySelector(`.price[data-price="${product.price}"]`);
+
+    if (product) {
+        product.quantity += 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        priceElement.textContent = `${(parseFloat(product.price) * product.quantity).toFixed(2)} TL`;
+        displayCart();
+    }
+}
+
+window.onload = displayCart;
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet"  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="giriş.css">
+    <script>
+        
+        function validateAndRedirect() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Lütfen geçerli bir e-posta adresi girin.");
+                return false;
+            }
+
+            if (password !== "123456") {
+                alert("Şifre yanlış. Lütfen tekrar deneyin.");
+                return false;
+            }
+
+            
+            window.location.href = 'pages/PanelHomepage.html';
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="anasayfa">
+        <div class="title">HOŞGELDİNİZ</div>
+      
+        <div class="form">
+            <form id="loginForm">
+                <div class="input_field">
+                    <input type="email" id="email" placeholder="E-posta Adresinizi Giriniz" class="input" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input_field">
+                    <input type="password" id="password" placeholder="Şifrenizi Giriniz" class="input" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="btn0">
+                    
+                    <input type="reset" value="Sıfırla" class="btn btn1">
+                    
+                    <button type="button" class="btn btn2" onclick="validateAndRedirect()">Giriş</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

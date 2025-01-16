@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgerler Menüsü</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="ana.html">
+                <img src="logo.jpg" alt="39CAFE Logo" class="navbar-brand" style="height: 120px;width: 120px;border-radius: 50%; margin-right: 10px;">
+            </a>
+            <a href="ana.html">
+                <h1 style="display: inline-block; vertical-align: middle;color: black;">39CAFE</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="hakkımızda.html"><strong>HAKKIMIZDA</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="#footer"><strong>İLETİŞİM</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu">
+        <!-- Cheddar Burger -->
+        <div class="menu-item">
+            <img src="hamburgerler/cheddar.png" alt="Cheddar Burger" data-bs-toggle="modal" data-bs-target="#cheddarModal">
+            <h3>Cheddar Burger</h3>
+            <p>150 gr hamburger köftesi, çift cheddar peyniri, karamelize soğan, The Burger Shop sos</p>
+            <p class="price">₺225.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Cheddar Burger', 225.00, 'hamburgerler/cheddar.png')">Sepete Ekle</button>
+        </div>
+
+        <!-- Mars Burger -->
+        <div class="menu-item">
+            <img src="hamburgerler/mars.png" alt="Mars Burger" data-bs-toggle="modal" data-bs-target="#marsModal">
+            <h3>Mars Burger</h3>
+            <p>150 gr hamburger köftesi, siyah ekmek, cheddar peyniri, karamelize soğan, dana bacon, traş patates, barbekü sos</p>
+            <p class="price">₺245.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Mars Burger', 245.00, 'hamburgerler/mars.png')">Sepete Ekle</button>
+        </div>
+
+        <!-- Tiftik Burger -->
+        <div class="menu-item">
+            <img src="hamburgerler/tiftik.png" alt="Tiftik Burger" data-bs-toggle="modal" data-bs-target="#tiftikModal">
+            <h3>Tiftik Burger</h3>
+            <p>Tek hamburger köftesi, 70 gr tiftik dana eti, cheddar peyniri, beğendi sos, kavrulmuş tereyağında isot.</p>
+            <p class="price">₺275.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Tiftik Burger', 275.00, 'hamburgerler/tiftik.png')">Sepete Ekle</button>
+        </div>
+
+        <!-- Tower Burger -->
+        <div class="menu-item">
+            <img src="hamburgerler/tower.png" alt="Tower Burger" data-bs-toggle="modal" data-bs-target="#towerModal">
+            <h3>Tower Burger</h3>
+            <p>3 adet hamburger köftesi, 3 adet cheddar peyniri, dana bacon, çıtır soğan, karamelize soğan, barbekü sos</p>
+            <p class="price">₺315.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Tower Burger', 315.00, 'hamburgerler/tower.png')">Sepete Ekle</button>
+        </div>
+    </div>
+
+    <!-- Modal - Cheddar Burger -->
+    <div class="modal fade" id="cheddarModal" tabindex="-1" aria-labelledby="cheddarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cheddarModalLabel">Cheddar Burger</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="hamburgerler/cheddar.png" alt="Hamburger Resmi" class="img-fluid"><!--fluid resimi responisve yapar-->
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 800 kcal</li>
+                        <li>Protein: 40 gr</li>
+                        <li>Karbonhidrat: 50 gr</li>
+                        <li>Yağ: 45 gr</li>
+                        
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri, gluten, soya içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Mars Burger -->
+    <div class="modal fade" id="marsModal" tabindex="-1" aria-labelledby="marsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="marsModalLabel">Mars Burger</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="hamburgerler/mars.png" alt="Hamburger Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 800 kcal</li>
+                        <li>Protein: 40 gr</li>
+                        <li>Karbonhidrat: 50 gr</li>
+                        <li>Yağ: 45 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri, gluten, soya içerir.</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Tiftik Burger -->
+    <div class="modal fade" id="tiftikModal" tabindex="-1" aria-labelledby="tiftikModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tiftikModalLabel">Tiftik Burger</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="hamburgerler/tiftik.png" alt="Hamburger Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 800 kcal</li>
+                        <li>Protein: 40 gr</li>
+                        <li>Karbonhidrat: 50 gr</li>
+                        <li>Yağ: 45 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri, gluten, soya içerir.</p>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Tower Burger -->
+    <div class="modal fade" id="towerModal" tabindex="-1" aria-labelledby="towerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="towerModalLabel">Tower Burger</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="hamburgerler/tower.png" alt="Hamburger Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 800 kcal</li>
+                        <li>Protein: 40 gr</li>
+                        <li>Karbonhidrat: 50 gr</li>
+                        <li>Yağ: 45 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri, gluten, soya içerir.</p>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-primary" onclick="tıkla()" style="width: 100%;">Sepetim</button>
+    </div>
+    <br>
+    <footer>
+        <div class="contact-info col-4">
+            <div style="flex: 1; min-width: 250px; text-align: left; margin: 10px 0;">
+                <h3>İletişim</h3>
+                <p>📞 Telefon: 0212 345 67 89</p>
+                <p>📍 Adres: SoHo 94 Broadway St, New York, NY 1001</p>
+                <li>Hafta içi: 11:00-23:00</li>
+                <li>Hafta sonu: 12:00–01:00</li>
+            </div>
+        </div>
+        <div class="logo-slogan col-4">
+            <img src="logo.jpg" alt="39CAFE">
+            <p>Kırklareli'nin kalbinde, kahvenin ve sohbetin adresi.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/?locale=tr_TR"><img src="footer/facebook.png" alt="Facebook"></a>
+                <a href="https://x.com/kirklaruni"><img src="footer/twitter-sign.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/yldzz_kerem/profilecard/?igsh=MXVrZXlqOHFoenpxaA=="><img src="footer/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="footer/pinterest.png" alt="Pinterest"></a>
+            </div>
+        </div>
+        <div class="working-hours col-4">
+            <h3></h3>
+            <ul>
+                <p>Bugün bize zaman ayırdığınız için teşekkür ederiz! 😊</p>
+                <p>Çevreyi koruma misyonumuzun bir parçası olarak dijital menümüzü seçtiğiniz için teşekkürler.</p>
+                <p><strong>Lezzet, kalite ve sürdürülebilirlik için buradayız.</strong></p>
+                
+            </ul>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

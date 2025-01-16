@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahvaltılar Menüsü</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="menu.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="ana.html">
+                <img src="logo.jpg" alt="39CAFE Logo" class="navbar-brand" style="height: 120px;width: 120px;border-radius: 50%; margin-right: 10px;">
+            </a>
+            <a href="ana.html">
+                <h1 style="display: inline-block; vertical-align: middle;color: black;">39CAFE</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="hakkımızda.html"><strong>HAKKIMIZDA</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="#footer"><strong>İLETİŞİM</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
+    <div class="menu">
+
+        <div class="menu-item" >
+            <img src="kahvaltılıklar/kahvaltı.jpg" alt="Serpme Kahvaltı Resmi" data-bs-toggle="modal" data-bs-target="#serpmeKahvaltiModal">
+            <h3>Serpme Kahvaltı</h3>
+            <p>Beyaz peynir, kaşar peynir,  çeçil peynir, örgü peynir, sosis, domates, salata, siyah zeytin, yeşil zeytin, reçel, tereyağ, bal, kaymak, sigara böreği, patates kızartması, pişi, nutella, fıstık ezmesi, ceviz, sınırsız çay, zeytin salatası, sahanda yumurta</p>
+            <p class="price">₺210.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Serpme Kahvaltı', 210.00, 'kahvaltılıklar/kahvaltı.jpg')">Sepete Ekle</button>
+        </div>
+
+        <div class="menu-item" >
+            <img src="kahvaltılıklar/menemen.avif" alt="Menemen Resmi" data-bs-toggle="modal" data-bs-target="#menemenModal">
+            <h3>Menemen</h3>
+            <p>Kuru soğan, yeşil biber, domates, yumurta</p>
+            <p class="price">₺160.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Menemen', 160.00, 'kahvaltılıklar/menemen.jpg')">Sepete Ekle</button>
+        </div>
+
+        <div class="menu-item" >
+            <img src="kahvaltılıklar/tost.jpg" alt="Karışık Tost Resmi" data-bs-toggle="modal" data-bs-target="#karisikTostModal">
+            <h3>Karışık Tost</h3>
+            <p>Sucuk, kaşar, domates, patates</p>
+            <p class="price">₺120.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Karışık Tost', 120.00, 'kahvaltılıklar/tost.jpg')">Sepete Ekle</button>
+        </div>
+
+        <div class="menu-item" >
+            <img src="kahvaltılıklar/yumurta.jpeg" alt="Sahanda Sucuklu Yumurta Resmi" data-bs-toggle="modal" data-bs-target="#sahandaSucukluModal">
+            <h3>Sahanda Sucuklu yumurta</h3>
+            <p>Sucuk, yumurta</p>
+            <p class="price">₺160.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Sahanda Sucuklu yumurta', 160.00, 'kahvaltılıklar/yumurta.jpg')">Sepete Ekle</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="serpmeKahvaltiModal" tabindex="-1" aria-labelledby="serpmeKahvaltiModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serpmeKahvaltiModalLabel">Serpme Kahvaltı</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="kahvaltılıklar/kahvaltı.jpg" alt="Serpme Kahvaltı Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 800 kcal</li>
+                        <li>Protein: 30 gr</li>
+                        <li>Karbonhidrat: 50 gr</li>
+                        <li>Yağ: 35 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri, gluten içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="menemenModal" tabindex="-1" aria-labelledby="menemenModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="menemenModalLabel">Menemen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="kahvaltılıklar/menemen.avif" alt="Menemen Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 300 kcal</li>
+                        <li>Protein: 15 gr</li>
+                        <li>Karbonhidrat: 25 gr</li>
+                        <li>Yağ: 20 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Gluten içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="karisikTostModal" tabindex="-1" aria-labelledby="karisikTostModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="karisikTostModalLabel">Karışık Tost</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="kahvaltılıklar/tost.jpg" alt="Karışık Tost Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 400 kcal</li>
+                        <li>Protein: 20 gr</li>
+                        <li>Karbonhidrat: 30 gr</li>
+                        <li>Yağ: 15 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Gluten içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal fade" id="sahandaSucukluModal" tabindex="-1" aria-labelledby="sahandaSucukluModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sahandaSucukluModalLabel">Sahanda Sucuklu Yumurtalı</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="kahvaltılıklar/yumurta.jpeg" alt="Sahanda Sucuklu Yumurtalı Resmi" class="img-fluid">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 500 kcal</li>
+                        <li>Protein: 25 gr</li>
+                        <li>Karbonhidrat: 20 gr</li>
+                        <li>Yağ: 30 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-primary" onclick="tıkla()" style="width: 100%;">Sepetim</button>
+    </div>
+    <br>
+
+    <footer id="footer">
+        <div class="contact-info col-4">
+            <div style="flex: 1; min-width: 250px; text-align: left; margin: 10px 0;">
+                <h3>İletişim</h3>
+                <p>📞 Telefon: 0212 345 67 89</p>
+                <p>📍 Adres: SoHo 94 Broadway St, New York, NY 1001</p>
+                <li>Hafta içi: 11:00-23:00</li>
+                <li>Hafta sonu: 12:00–01:00</li>
+            </div>
+        </div>
+        <div class="logo-slogan col-4">
+            <img src="logo.jpg" alt="39CAFE">
+            <p>Kırklareli'nin kalbinde, kahvenin ve sohbetin adresi.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/?locale=tr_TR"><img src="footer/facebook.png" alt="Facebook"></a>
+                <a href="https://x.com/kirklaruni"><img src="footer/twitter-sign.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/yldzz_kerem/profilecard/?igsh=MXVrZXlqOHFoenpxaA=="><img src="footer/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="footer/pinterest.png" alt="Pinterest"></a>
+            </div>
+        </div>
+        <div class="working-hours col-4">
+            <h3></h3>
+            <ul>
+                <p>Bugün bize zaman ayırdığınız için teşekkür ederiz! 😊</p>
+                <p>Çevreyi koruma misyonumuzun bir parçası olarak dijital menümüzü seçtiğiniz için teşekkürler.</p>
+                <p><strong>Lezzet, kalite ve sürdürülebilirlik için buradayız.</strong></p>
+                
+            </ul>
+        </div>
+    </footer>
+    <script src="menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

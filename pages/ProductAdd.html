@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Ekle</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>39 Cafe</h2>
+        </div>
+        <ul class="menu">
+            <li><a href="../pages/PanelHomepage.html">Anasayfa</a></li>
+            <li><a href="../pages/CategoryAdd.html">Kategori Ekle</a></li>
+            <li><a href="../pages/ProductAdd.html" class="active">Ürün Ekle</a></li>
+            <li><a href="../pages/ProductEdit.html">Ürün Düzenle</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Ürün Ekle</h1>
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+        </div>
+
+        <div class="content">
+            <div class="form-container">
+                <form>
+                    
+                    <div class="product-row">
+                        <label for="product-name">Ürün Adı:</label>
+                        <input type="text" id="product-name" name="product-name" required>
+                    </div>
+
+                    
+                    <div class="product-row">
+                        <label for="category-select">Kategori Seç:</label>
+                        <select id="category-select" name="category-select" required>
+                            <option value="kategori1">Kategori 1</option>
+                            <option value="kategori2">Kategori 2</option>
+                            <option value="kategori3">Kategori 3</option>
+                        </select>
+                    </div>
+
+                    
+                    <div class="product-row">
+                        <label for="product-price">Fiyat:</label>
+                        <input type="text" id="product-price" name="product-price" required>
+                    </div>
+
+                    
+                    <div class="product-row">
+                        <label for="product-description">Açıklama:</label>
+                        <textarea id="product-description" name="product-description" required></textarea>
+                    </div>
+
+                    
+                    <div class="product-row">
+                        <label for="product-image">Fotoğraf Ekle:</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*">
+                    </div>
+
+                    <div class="product-row">
+                        <label for="product-allergy">Alerji Ekle:</label>
+                        <input type="text" id="product-allergy" name="product-allergy" required>
+                    </div>
+
+                    <div class="product-row">
+                        <label for="product-calorie">Kalori Miktarını Ekle:</label>
+                        <input type="text" id="product-calorie" name="product-calorie" required>
+                    </div>
+
+                    
+                    <button type="submit" id="save-product-btn" class="save-btn">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = '../giriş.html'; 
+        }
+    </script>
+</body>
+</html>

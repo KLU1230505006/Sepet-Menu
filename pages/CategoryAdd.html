@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Ekle</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>39 Cafe</h2>
+        </div>
+        <ul class="menu">
+            <li><a href="../pages/PanelHomepage.html">Anasayfa</a></li>
+            <li><a href="../pages/CategoryAdd.html" class="active">Kategori Ekle</a></li>
+            <li><a href="../pages/ProductAdd.html">Ürün Ekle</a></li>
+            <li><a href="../pages/ProductEdit.html">Ürün Düzenle</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Kategori Ekle</h1>
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+        </div>
+
+        <div class="content">
+            <div class="form-container">
+                <form>
+                    
+                    <div class="input-container">
+                        <label for="category-name">Kategori Adı:</label>
+                        <input type="text" id="category-name" name="category-name" required>
+                    </div>
+
+                    
+                    <div class="file-upload">
+                        <label for="category-image">Fotoğraf Ekle:</label>
+                        <input type="file" id="category-image" name="category-image" accept="image/*">
+                    </div>
+
+                    
+                    <button type="submit" id="save-btn" class="save-btn">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = '../giriş.html'; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etler Menüsü</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <a href="ana.html">
+                <img src="logo.jpg" alt="39CAFE Logo" class="navbar-brand" style="height: 120px;width: 120px;border-radius: 50%; margin-right: 10px;">
+              </a>
+              <a href="ana.html">
+                <h1 style="display: inline-block; vertical-align: middle;color: black;">39CAFE</h1>
+              </a>
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="hakkımızda.html"><strong>HAKKIMIZDA</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="#footer"><strong>İLETİŞİM</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">   
+
+        <div class="menu-item">
+            <img src="etler/karısıkızgara.jpg" alt="Karışık Izgara" data-bs-toggle="modal" data-bs-target="#karisikIzgaraModal">
+            <h3>Karışık Izgara</h3>
+            <p>Çöp şiş, pirzola, köfte, parça pirinç, pilav, bomfrit, ızgara domates, yeşil biber</p>
+            <p class="price">₺290.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Karışık Izgara', 290.00, 'etler/karısıkızgara.jpg')">Sepete Ekle</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="etler/biftek.webp" alt="Biftek Izgara" data-bs-toggle="modal" data-bs-target="#biftekIzgaraModal">
+            <h3>Biftek Izgara</h3>
+            <p>Biftek, pilav, bomfrit, ızgara domates, yeşil biber</p>
+            <p class="price">₺260.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Biftek Izgara', 260.00, 'etler/biftek.webp')">Sepete Ekle</button>
+
+        </div>
+
+        <div class="menu-item">
+            <img src="etler/kuzupirzola.jpg" alt="Kuzu Pirzola" data-bs-toggle="modal" data-bs-target="#kuzuPirzolaModal">
+            <h3>Kuzu Pirzola</h3>
+            <p>Pirzola, pilav, bomfrit, ızgara domates, yeşil biber</p>
+            <p class="price">₺270.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Kuzu Pirzola', 270.00, 'etler/kuzupirzola.jpg')">Sepete Ekle</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="etler/köfte.jpg" alt="Spesiyal Köfte Izgara" data-bs-toggle="modal" data-bs-target="#kofteIzgaraModal">
+            <h3>Spesiyal Köfte Izgara</h3>
+            <p>Köfte, pilav, bomfrit, ızgara domates, yeşil biber</p>
+            <p class="price">₺230.00</p>
+            <button class="button" style="margin: 10px; width: calc(100% - 20px); background-color: lightgray;" onclick="addToCart('Spesiyal Köfte Izgara', 230.00, 'etler/köfte.jpg')">Sepete Ekle</button>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="karisikIzgaraModal" tabindex="-1" aria-labelledby="karisikIzgaraModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="karisikIzgaraModalLabel">Karışık Izgara</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="etler/karısıkızgara.jpg" alt="Karışık Izgara" class="img-fluid mb-3">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 750 kcal</li>
+                        <li>Protein: 55 gr</li>
+                        <li>Karbonhidrat: 45 gr</li>
+                        <li>Yağ: 35 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="biftekIzgaraModal" tabindex="-1" aria-labelledby="biftekIzgaraModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="biftekIzgaraModalLabel">Biftek Izgara</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="etler/biftek.webp" alt="Biftek Izgara" class="img-fluid mb-3">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 680 kcal</li>
+                        <li>Protein: 50 gr</li>
+                        <li>Karbonhidrat: 30 gr</li>
+                        <li>Yağ: 40 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="kuzuPirzolaModal" tabindex="-1" aria-labelledby="kuzuPirzolaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kuzuPirzolaModalLabel">Kuzu Pirzola</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="etler/kuzupirzola.jpg" alt="Kuzu Pirzola" class="img-fluid mb-3">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 720 kcal</li>
+                        <li>Protein: 52 gr</li>
+                        <li>Karbonhidrat: 40 gr</li>
+                        <li>Yağ: 38 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="kofteIzgaraModal" tabindex="-1" aria-labelledby="kofteIzgaraModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kofteIzgaraModalLabel">Spesiyal Köfte Izgara</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="etler/köfte.jpg" alt="Spesiyal Köfte Izgara" class="img-fluid mb-3">
+                    <h4>Besin Değerleri</h4>
+                    <ul>
+                        <li>Kalori: 650 kcal</li>
+                        <li>Protein: 45 gr</li>
+                        <li>Karbonhidrat: 35 gr</li>
+                        <li>Yağ: 30 gr</li>
+                    </ul>
+                    <h4>Alerjen Bilgisi</h4>
+                    <p>Süt ürünleri içerir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary" onclick="tıkla()" style="width: 100%;">Sepetim</button>
+    </div>
+    <br>
+
+        <footer id="footer">
+            <div class="contact-info col-4">
+                <div style="flex: 1; min-width: 250px; text-align: left; margin: 10px 0;">
+                    <h3>İletişim</h3>
+                    <p>📞 Telefon: 0212 345 67 89</p>
+                    <p>📍 Adres: SoHo 94 Broadway St, New York, NY 1001</p>
+                    <li>Hafta içi: 11:00-23:00</li>
+                    <li>Hafta sonu: 12:00–01:00</li>
+                </div>
+            </div>
+            <div class="logo-slogan col-4">
+                <img src="logo.jpg" alt="39CAFE">
+                <p>Kırklareli'nin kalbinde, kahvenin ve sohbetin adresi.</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/?locale=tr_TR"><img src="footer/facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/kirklaruni"><img src="footer/twitter-sign.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/yldzz_kerem/profilecard/?igsh=MXVrZXlqOHFoenpxaA=="><img src="footer/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="footer/pinterest.png" alt="Pinterest"></a>
+                </div>
+            </div>
+            <div class="working-hours col-4">
+                <h3></h3>
+                <ul>
+                    <p>Bugün bize zaman ayırdığınız için teşekkür ederiz! 😊</p>
+                    <p>Çevreyi koruma misyonumuzun bir parçası olarak dijital menümüzü seçtiğiniz için teşekkürler.</p>
+                    <p><strong>Lezzet, kalite ve sürdürülebilirlik için buradayız.</strong></p>
+                    
+                </ul>
+            </div>
+        </footer>
+        <script src="menu.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+</html>

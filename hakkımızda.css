@@ -1,0 +1,67 @@
+.navbar {
+  background-color: white; 
+  padding: 15px 20px; 
+}
+
+
+.navbar-brand img {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px; /
+  border-radius: 50%; 
+}
+.paragraph-style {
+  color: white;
+  font-size: 22px;
+  line-height: 1.6; 
+  margin-top: 20px; 
+  font-weight: bolder; 
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;  
+  padding: 20px;
+  flex-wrap: wrap;  
+}
+
+.contact-info, .logo-slogan, .bilgiler {
+  width: 30%;
+  text-align: left;
+  font-size: 20px; 
+}
+
+.logo-slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;  
+  font-size: 22px; 
+}
+
+.logo-slogan img {
+  width: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;  
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    flex-direction: column;  
+    align-items: center;  
+  }
+  
+  .contact-info, .logo-slogan, .bilgiler {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;  
+    font-size: 18px; 
+  }
+}
+
+.social-media img {
+  width: 15px;
+  height: 20px;
+  margin: 0 5px;
+}

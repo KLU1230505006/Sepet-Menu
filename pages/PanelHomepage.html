@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>39 Cafe</h2>
+        </div>
+        <ul class="menu">
+            <li><a href="../pages/PanelHomepage.html" class="active">Anasayfa</a></li>
+            <li><a href="../pages/CategoryAdd.html">Kategori Ekle</a></li>
+            <li><a href="../pages/ProductAdd.html">Ürün Ekle</a></li>
+            <li><a href="../pages/ProductEdit.html">Ürün Düzenle</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>39 Cafe</h1>
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+        </div>
+        <div class="content">
+            <h2 class="welcome-text">Hoşgeldiniz</h2>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = '../giriş.html'; 
+        }
+    </script>
+</body>
+</html>
